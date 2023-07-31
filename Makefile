@@ -18,10 +18,6 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.s
 	mkdir -p $(@D)
 	$(COMPILER) $(FLAGS) $< -o $@
 
-test: $(NAME)
-	gcc main.c libasm.a -o test
-	./test
-
 all: $(NAME)
 
 re: fclean all
