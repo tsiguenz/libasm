@@ -11,7 +11,8 @@ OBJ_PATH = obj/
 
 SRC_NAME = ft_strlen.s \
 					 ft_strcpy.s \
-					 ft_strcmp.s
+					 ft_strcmp.s \
+					 ft_write.s
 
 OBJ_NAME = $(SRC_NAME:.s=.o)
 
