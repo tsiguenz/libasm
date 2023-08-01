@@ -1,6 +1,11 @@
 NAME=libasm.a
 COMPILER=nasm
+# Linux flags
 FLAGS=-f elf64
+# Mac flags
+ifeq ($(shell uname), Darwin)
+   FLAGS = -f macho64
+endif
 SRC_PATH = src/
 OBJ_PATH = obj/
 
