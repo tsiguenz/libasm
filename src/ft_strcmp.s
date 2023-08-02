@@ -1,26 +1,27 @@
 global ft_strcmp
 
 segment .text
-ft_strcmp:
-	push rbp 
-	mov rbp,rsp
-	xor rcx,rcx
-	xor rax,rax
-	xor r8,r8
-	xor r9,r9
-	mov r10,rdi
-	mov r11,rsi
+
+	ft_strcmp:
+		xor rax,rax
+		xor r8b,r8b
+		xor r9b,r9b
+		jmp .loop
+
 	.loop:
-		mov r8b,BYTE [r10+rcx]
-		mov r9b,BYTE [r11+rcx]
+		mov r8b,BYTE [rdi]
+		mov r9b,BYTE [rsi]
 		sub r8b,r9b
 		jnz  .set_ret
-		cmp BYTE [r10+rcx],0
+		cmp BYTE [rdi],0
 		jz  .end
-		inc rcx
+		inc rdi
+		inc rsi
 		jmp .loop
+
 	.set_ret:
 		movsx rax, r8b
+		jmp .end
+
 	.end:
-		pop rbp
 		ret
