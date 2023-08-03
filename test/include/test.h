@@ -22,8 +22,10 @@ extern int tests_run;
 #define RED "\e[31m"
 #define GREEN "\e[32m"
 
+#include <errno.h>
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
 
 // libasm functions to test
 extern size_t ft_strlen(const char *s);

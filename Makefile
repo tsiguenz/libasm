@@ -29,7 +29,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.s
 
 all: $(NAME)
 
-test: all
+test: re
 	make test -s -C test/
 
 re: fclean all

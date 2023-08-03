@@ -31,7 +31,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 all: $(NAME)
 
-test: re
+test: $(NAME)
 	./$(NAME)
 
 re: fclean all
