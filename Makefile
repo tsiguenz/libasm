@@ -24,17 +24,22 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.s
-	mkdir -p $(@D)
+	@mkdir -p $(@D)
 	$(COMPILER) $(FLAGS) $< -o $@
 
 all: $(NAME)
+
+test: all
+	make test -s -C test/
 
 re: fclean all
 
 clean:
 	rm -rf obj
+	make clean -s -C test/
 
 fclean: clean
 	rm -rf $(NAME)
+	make fclean -s -C test/
 
 .PHONY: all clean fclean re
