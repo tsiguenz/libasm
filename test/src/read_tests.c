@@ -8,6 +8,7 @@ char *read_tests() {
   int fd;
 
   fd = open("src/read_tests.c", O_RDONLY);
+
   ret = fct(fd, str, 8);
   mu_assert("return value of read(fd, str, 8)", ret == 8);
   mu_assert("str after read(fd, str, 8)", strcmp(str, "#include") == 0);

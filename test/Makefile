@@ -14,7 +14,8 @@ SRC_NAME = main.c \
 					 strcpy_tests.c \
 					 strcmp_tests.c \
 					 write_tests.c \
-					 read_tests.c
+					 read_tests.c \
+					 strdup_tests.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

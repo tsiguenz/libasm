@@ -3,6 +3,7 @@
 #define fct ft_write
 
 char *write_tests() {
+  printf("-----    Write outputs     -----\n");
   ssize_t ret = 0;
   ret = fct(1, "Hello world!\n", 13);
   mu_assert("return value of write(1, \"Hello world!\\n\", 13)", ret == 13);
@@ -36,5 +37,6 @@ char *write_tests() {
   ret = fct(1, "\n", 1);
   mu_assert("return value of write(1, \"\\n\", 1)", ret == 1);
   errno = 0;
+  printf("----- End of write outputs -----\n");
   return 0;
 }
