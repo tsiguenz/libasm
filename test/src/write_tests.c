@@ -3,9 +3,6 @@
 #define fct ft_write
 
 char *write_tests() {
-  // printf("return value = %ld\n", write(1, "42\n", 1));
-  // printf("errno = %d\n", errno);
-
   ssize_t ret = 0;
   ret = fct(1, "Hello world!\n", 13);
   mu_assert("return value of write(1, \"Hello world!\\n\", 13)", ret == 13);
@@ -15,16 +12,17 @@ char *write_tests() {
   mu_assert("return value of write(1, \"\", 0)", ret == 0);
   mu_assert("errno after write(1, \"\", 0)", errno == 0);
 
-  ret = fct(1, "Hello world!\n", 2);
-  mu_assert("return value of write(1, \"Hello world!\\n\", 2)", ret == 2);
-  mu_assert("errno after write(1, \"Hello world!\\n\", 11)", errno == 0);
+  ret = fct(1, "422222222222", 2);
+  mu_assert("return value of write(1, \"422222222222\", 2)", ret == 2);
+  mu_assert("errno after write(1, \"422222222222\", 11)", errno == 0);
 
-  // TODO: Need to handle that ?
+  // TODO(tsiguenz): Need to handle that ?
   // ret = fct(1, "Hello world!\n", 100);
   // mu_assert("return value of write(1, \"Hello world!\\n\", 100)", ret ==
   // 100); mu_assert("errno after write(1, \"Hello world!\\n\", 100)", errno ==
   // 0);
 
+  // TODO(tsiguenz): gcc crash here and valgrind not ok, do what ?
   ret = fct(1, NULL, 4);
   mu_assert("return value of write(1, NULL, 4)", ret == -1);
   mu_assert("errno after write(1, NULL, 4)", errno == EFAULT);
@@ -37,5 +35,6 @@ char *write_tests() {
 
   ret = fct(1, "\n", 1);
   mu_assert("return value of write(1, \"\\n\", 1)", ret == 1);
+  errno = 0;
   return 0;
 }

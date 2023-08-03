@@ -23,8 +23,11 @@ extern int tests_run;
 #define GREEN "\e[32m"
 
 #include <errno.h>
+#include <fcntl.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <unistd.h>
 
 // libasm functions to test
@@ -32,10 +35,12 @@ extern size_t ft_strlen(const char *s);
 extern char *ft_strcpy(char *dest, const char *src);
 extern int ft_strcmp(const char *s1, const char *s2);
 extern ssize_t ft_write(int fd, const void *buf, size_t count);
+extern ssize_t ft_read(int fd, void *buf, size_t count);
 
 char *strlen_tests();
 char *strcpy_tests();
 char *strcmp_tests();
 char *write_tests();
+char *read_tests();
 
 #endif // TEST_H

@@ -1,7 +1,7 @@
 NAME = libasm-tests
 LIBASM = ../libasm.a
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 # Mac arm flags
 ifeq ($(shell uname), Darwin)
    FLAGS += -target x86_64-apple-darwin22.4.0
@@ -13,7 +13,8 @@ SRC_NAME = main.c \
 					 strlen_tests.c \
 					 strcpy_tests.c \
 					 strcmp_tests.c \
-					 write_tests.c
+					 write_tests.c \
+					 read_tests.c
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
 

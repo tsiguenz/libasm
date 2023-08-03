@@ -7,6 +7,7 @@ static char *all_tests() {
   mu_run_test(strcpy_tests);
   mu_run_test(strcmp_tests);
   mu_run_test(write_tests);
+  mu_run_test(read_tests);
   return 0;
 }
 
