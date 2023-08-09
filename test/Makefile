@@ -1,7 +1,7 @@
 NAME = libasm-tests
 LIBASM = ../libasm.a
 CC = gcc
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 # Mac arm flags
 ifeq ($(shell uname), Darwin)
    FLAGS += -target x86_64-apple-darwin22.4.0

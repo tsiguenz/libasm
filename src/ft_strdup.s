@@ -9,7 +9,7 @@ segment .text
 	ft_strdup:
 		push rbp
 		mov rbp,rsp
-		mov r8,rdi
+		push rdi
 		call ft_strlen wrt ..plt
 		inc rax
 		mov rdi,rax
@@ -17,7 +17,7 @@ segment .text
 		cmp rax, 0
 		jz handle_error
 		mov rdi,rax
-		mov rsi,r8
+		pop rsi
 		call ft_strcpy wrt ..plt
 		jmp end
 	
