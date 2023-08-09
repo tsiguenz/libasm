@@ -3,6 +3,8 @@ global ft_strlen
 segment .text
 
 	ft_strlen:
+		push rbp
+		mov rbp,rsp
 		xor rcx,rcx ; set rcx to 0
 		jmp .loop
 
@@ -14,4 +16,5 @@ segment .text
 
 	.end:
 		mov rax,rcx ; set rcx to rax
+		leave
 		ret

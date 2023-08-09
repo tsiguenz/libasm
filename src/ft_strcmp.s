@@ -3,6 +3,8 @@ global ft_strcmp
 segment .text
 
 	ft_strcmp:
+		push rbp
+		mov rbp,rsp
 		xor rax,rax
 		xor r8b,r8b
 		xor r9b,r9b
@@ -24,4 +26,5 @@ segment .text
 		jmp .end
 
 	.end:
+		leave
 		ret

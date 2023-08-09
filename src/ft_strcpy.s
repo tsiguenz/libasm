@@ -3,6 +3,8 @@ global ft_strcpy
 segment .text
 
 	ft_strcpy:
+		push rbp
+		mov rbp,rsp
 		mov rax,rdi ; set return value
 		jmp .loop
 
@@ -16,4 +18,5 @@ segment .text
 		jmp .loop
 
 	.end:
+		leave
 		ret

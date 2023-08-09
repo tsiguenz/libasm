@@ -5,11 +5,11 @@
 char *strdup_tests() {
   char *str = NULL;
 
-	str = fct("42");
+  str = fct("42");
   mu_assert("strcmp ft_strdup(\"42\")", strcmp(str, "42") == 0);
   free(str);
 
-	str = fct("");
+  str = fct("");
   mu_assert("strcmp ft_strdup(\"\")", strcmp(str, "") == 0);
   free(str);
 
